@@ -1,2 +1,2 @@
 # MoonWechat
-a little wechat demo for ios demo
+a little wechat demo for ios.
