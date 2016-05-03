@@ -40,6 +40,7 @@
     if (!_friendArr) {
         _friendArr = [NSMutableArray array];
     }
+    [self getFriendList];
     
 }
 
@@ -49,7 +50,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self createTableView];
-    [self getFriendList];
+    
 
 }
 
@@ -454,7 +455,10 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:param success:^(AFHTTPRequestOperation *operation, NSDictionary *responseData){
-        [_friendArr addObjectsFromArray:responseData[@"data"]];
+        if ([responseData[@"data"] count] > _friendArr.count) {
+            [_friendArr addObjectsFromArray:responseData[@"data"]];
+        }
+        
         hud.removeFromSuperViewOnHide = YES;
         [hud hide:YES afterDelay:0];
         NSLog(@"mid....");

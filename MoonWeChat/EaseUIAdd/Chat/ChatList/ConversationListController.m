@@ -13,12 +13,12 @@
 #import "ConversationListController.h"
 
 #import "ChatViewController.h"
-//#import "EMSearchBar.h"
-//#import "EMSearchDisplayController.h"
-//#import "RobotManager.h"
-//#import "RobotChatViewController.h"
-//#import "UserProfileManager.h"
-//#import "RealtimeSearchUtil.h"
+#import "EMSearchBar.h"
+#import "EMSearchDisplayController.h"
+#import "RobotManager.h"
+#import "RobotChatViewController.h"
+#import "UserProfileManager.h"
+#import "RealtimeSearchUtil.h"
 
 @implementation EMConversation (search)
 
@@ -26,14 +26,14 @@
 - (NSString*)showName
 {
     if (self.type == EMConversationTypeChat) {
-//        if ([[RobotManager sharedInstance] isRobotWithUsername:self.conversationId]) {
-//            return [[RobotManager sharedInstance] getRobotNickWithUsername:self.conversationId];
-//        }
-//        return [[UserProfileManager sharedInstance] getNickNameWithUsername:self.conversationId];
-//    } else if (self.type == EMConversationTypeGroupChat) {
-//        if ([self.ext objectForKey:@"subject"] || [self.ext objectForKey:@"isPublic"]) {
-//            return [self.ext objectForKey:@"subject"];
-//        }
+        if ([[RobotManager sharedInstance] isRobotWithUsername:self.conversationId]) {
+            return [[RobotManager sharedInstance] getRobotNickWithUsername:self.conversationId];
+        }
+        return [[UserProfileManager sharedInstance] getNickNameWithUsername:self.conversationId];
+    } else if (self.type == EMConversationTypeGroupChat) {
+        if ([self.ext objectForKey:@"subject"] || [self.ext objectForKey:@"isPublic"]) {
+            return [self.ext objectForKey:@"subject"];
+        }
     }
     return self.conversationId;
 }
@@ -43,9 +43,9 @@
 @interface ConversationListController ()<EaseConversationListViewControllerDelegate, EaseConversationListViewControllerDataSource,UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, strong) UIView *networkStateView;
-//@property (nonatomic, strong) EMSearchBar           *searchBar;
+@property (nonatomic, strong) EMSearchBar           *searchBar;
 
-//@property (strong, nonatomic) EMSearchDisplayController *searchController;
+@property (strong, nonatomic) EMSearchDisplayController *searchController;
 
 @end
 
@@ -61,11 +61,11 @@
     
     [self tableViewDidTriggerHeaderRefresh];
     
-//    [self.view addSubview:self.searchBar];
-//    self.tableView.frame = CGRectMake(0, self.searchBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.searchBar.frame.size.height);
+    [self.view addSubview:self.searchBar];
+    self.tableView.frame = CGRectMake(0, self.searchBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.searchBar.frame.size.height);
     [self networkStateView];
     
-//    [self searchController];
+    [self searchController];
     
     [self removeEmptyConversationsFromDB];
 }
@@ -122,69 +122,69 @@
     return _networkStateView;
 }
 
-//- (UISearchBar *)searchBar
-//{
-//    if (!_searchBar) {
-//        _searchBar = [[EMSearchBar alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, 44)];
-//        _searchBar.delegate = self;
-//        _searchBar.placeholder = NSLocalizedString(@"search", @"Search");
-//        _searchBar.backgroundColor = [UIColor colorWithRed:0.747 green:0.756 blue:0.751 alpha:1.000];
-//    }
-//    
-//    return _searchBar;
-//}
+- (UISearchBar *)searchBar
+{
+    if (!_searchBar) {
+        _searchBar = [[EMSearchBar alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, 44)];
+        _searchBar.delegate = self;
+        _searchBar.placeholder = NSLocalizedString(@"search", @"Search");
+        _searchBar.backgroundColor = [UIColor colorWithRed:0.747 green:0.756 blue:0.751 alpha:1.000];
+    }
+    
+    return _searchBar;
+}
 
-//- (EMSearchDisplayController *)searchController
-//{
-//    if (_searchController == nil) {
-//        _searchController = [[EMSearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-//        _searchController.delegate = self;
-//        _searchController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//        _searchController.searchResultsTableView.tableFooterView = [[UIView alloc] init];
-//        
-//        __weak ConversationListController *weakSelf = self;
-//        [_searchController setCellForRowAtIndexPathCompletion:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
-//            NSString *CellIdentifier = [EaseConversationCell cellIdentifierWithModel:nil];
-//            EaseConversationCell *cell = (EaseConversationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//            
-//            // Configure the cell...
-//            if (cell == nil) {
-//                cell = [[EaseConversationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//            }
-//            
-//            id<IConversationModel> model = [weakSelf.searchController.resultsSource objectAtIndex:indexPath.row];
-//            cell.model = model;
-//            
-//            cell.detailLabel.text = [weakSelf conversationListViewController:weakSelf latestMessageTitleForConversationModel:model];
-//            cell.timeLabel.text = [weakSelf conversationListViewController:weakSelf latestMessageTimeForConversationModel:model];
-//            return cell;
-//        }];
-//        
-//        [_searchController setHeightForRowAtIndexPathCompletion:^CGFloat(UITableView *tableView, NSIndexPath *indexPath) {
-//            return [EaseConversationCell cellHeightWithModel:nil];
-//        }];
-//        
-//        [_searchController setDidSelectRowAtIndexPathCompletion:^(UITableView *tableView, NSIndexPath *indexPath) {
-//            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//            [weakSelf.searchController.searchBar endEditing:YES];
-//            id<IConversationModel> model = [weakSelf.searchController.resultsSource objectAtIndex:indexPath.row];
-//            EMConversation *conversation = model.conversation;
-//            ChatViewController *chatController;
-//            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//                chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//            }else {
-//                chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//                chatController.title = [conversation showName];
-//            }
-//            [weakSelf.navigationController pushViewController:chatController animated:YES];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
-//            [weakSelf.tableView reloadData];
-//        }];
-//    }
-//    
-//    return _searchController;
-//}
+- (EMSearchDisplayController *)searchController
+{
+    if (_searchController == nil) {
+        _searchController = [[EMSearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+        _searchController.delegate = self;
+        _searchController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _searchController.searchResultsTableView.tableFooterView = [[UIView alloc] init];
+        
+        __weak ConversationListController *weakSelf = self;
+        [_searchController setCellForRowAtIndexPathCompletion:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
+            NSString *CellIdentifier = [EaseConversationCell cellIdentifierWithModel:nil];
+            EaseConversationCell *cell = (EaseConversationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+            
+            // Configure the cell...
+            if (cell == nil) {
+                cell = [[EaseConversationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            }
+            
+            id<IConversationModel> model = [weakSelf.searchController.resultsSource objectAtIndex:indexPath.row];
+            cell.model = model;
+            
+            cell.detailLabel.text = [weakSelf conversationListViewController:weakSelf latestMessageTitleForConversationModel:model];
+            cell.timeLabel.text = [weakSelf conversationListViewController:weakSelf latestMessageTimeForConversationModel:model];
+            return cell;
+        }];
+        
+        [_searchController setHeightForRowAtIndexPathCompletion:^CGFloat(UITableView *tableView, NSIndexPath *indexPath) {
+            return [EaseConversationCell cellHeightWithModel:nil];
+        }];
+        
+        [_searchController setDidSelectRowAtIndexPathCompletion:^(UITableView *tableView, NSIndexPath *indexPath) {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            [weakSelf.searchController.searchBar endEditing:YES];
+            id<IConversationModel> model = [weakSelf.searchController.resultsSource objectAtIndex:indexPath.row];
+            EMConversation *conversation = model.conversation;
+            ChatViewController *chatController;
+            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
+                chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
+            }else {
+                chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                chatController.title = [conversation showName];
+            }
+            [weakSelf.navigationController pushViewController:chatController animated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
+            [weakSelf.tableView reloadData];
+        }];
+    }
+    
+    return _searchController;
+}
 
 #pragma mark - EaseConversationListViewControllerDelegate
 
@@ -194,15 +194,15 @@
     if (conversationModel) {
         EMConversation *conversation = conversationModel.conversation;
         if (conversation) {
-//            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//                RobotChatViewController *chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
-//                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//                [self.navigationController pushViewController:chatController animated:YES];
-//            } else {
+            if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
+                RobotChatViewController *chatController = [[RobotChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
+                chatController.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
+                [self.navigationController pushViewController:chatController animated:YES];
+            } else {
                 ChatViewController *chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
                 chatController.title = conversationModel.title;
                 [self.navigationController pushViewController:chatController animated:YES];
-//            }
+            }
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:@"setupUnreadMessageCount" object:nil];
         [self.tableView reloadData];
@@ -215,35 +215,35 @@
                                     modelForConversation:(EMConversation *)conversation
 {
     EaseConversationModel *model = [[EaseConversationModel alloc] initWithConversation:conversation];
-//    if (model.conversation.type == EMConversationTypeChat) {
-//        if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
-//            model.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
-//        } else {
-//            UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:conversation.conversationId];
-//            if (profileEntity) {
-//                model.title = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
-//                model.avatarURLPath = profileEntity.imageUrl;
-//            }
-//        }
-//    } else if (model.conversation.type == EMConversationTypeGroupChat) {
-//        NSString *imageName = @"groupPublicHeader";
-//        if (![conversation.ext objectForKey:@"subject"])
-//        {
-//            NSArray *groupArray = [[EMClient sharedClient].groupManager getAllGroups];
-//            for (EMGroup *group in groupArray) {
-//                if ([group.groupId isEqualToString:conversation.conversationId]) {
-//                    NSMutableDictionary *ext = [NSMutableDictionary dictionaryWithDictionary:conversation.ext];
-//                    [ext setObject:group.subject forKey:@"subject"];
-//                    [ext setObject:[NSNumber numberWithBool:group.isPublic] forKey:@"isPublic"];
-//                    conversation.ext = ext;
-//                    break;
-//                }
-//            }
-//        }
-//        model.title = [conversation.ext objectForKey:@"subject"];
-//        imageName = [[conversation.ext objectForKey:@"isPublic"] boolValue] ? @"groupPublicHeader" : @"groupPrivateHeader";
-//        model.avatarImage = [UIImage imageNamed:imageName];
-//    }
+    if (model.conversation.type == EMConversationTypeChat) {
+        if ([[RobotManager sharedInstance] isRobotWithUsername:conversation.conversationId]) {
+            model.title = [[RobotManager sharedInstance] getRobotNickWithUsername:conversation.conversationId];
+        } else {
+            UserProfileEntity *profileEntity = [[UserProfileManager sharedInstance] getUserProfileByUsername:conversation.conversationId];
+            if (profileEntity) {
+                model.title = profileEntity.nickname == nil ? profileEntity.username : profileEntity.nickname;
+                model.avatarURLPath = profileEntity.imageUrl;
+            }
+        }
+    } else if (model.conversation.type == EMConversationTypeGroupChat) {
+        NSString *imageName = @"groupPublicHeader";
+        if (![conversation.ext objectForKey:@"subject"])
+        {
+            NSArray *groupArray = [[EMClient sharedClient].groupManager getAllGroups];
+            for (EMGroup *group in groupArray) {
+                if ([group.groupId isEqualToString:conversation.conversationId]) {
+                    NSMutableDictionary *ext = [NSMutableDictionary dictionaryWithDictionary:conversation.ext];
+                    [ext setObject:group.subject forKey:@"subject"];
+                    [ext setObject:[NSNumber numberWithBool:group.isPublic] forKey:@"isPublic"];
+                    conversation.ext = ext;
+                    break;
+                }
+            }
+        }
+        model.title = [conversation.ext objectForKey:@"subject"];
+        imageName = [[conversation.ext objectForKey:@"isPublic"] boolValue] ? @"groupPublicHeader" : @"groupPrivateHeader";
+        model.avatarImage = [UIImage imageNamed:imageName];
+    }
     return model;
 }
 

@@ -8,6 +8,7 @@
 
 #import "AddressDetailViewController.h"
 #import "MoonChatViewController.h"
+#import "ChatViewController.h"
 
 
 @interface AddressDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -186,7 +187,10 @@
 -(void)sendMsgBtnClick{
     NSLog(@"you click send msg button...");
     NSString *title = self.userInfo[@"userName"];
-    EaseMessageViewController *chatVC = [[EaseMessageViewController alloc]initWithConversationChatter:title conversationType:EMConversationTypeChat];
+//    EaseMessageViewController *chatVC = [[EaseMessageViewController alloc]initWithConversationChatter:title conversationType:EMConversationTypeChat];
+    
+    ChatViewController *chatVC = [[ChatViewController alloc]initWithConversationChatter:title conversationType:EMConversationTypeChat];
+    
     chatVC.title = self.userInfo[@"nickName"];
     chatVC.hidesBottomBarWhenPushed = YES;
     

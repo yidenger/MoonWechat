@@ -114,6 +114,10 @@
     //解决在聊天界面点击表情会崩溃的办法
     EaseEmotionManager *manager = [[EaseEmotionManager alloc]initWithType:EMEmotionDefault emotionRow:3 emotionCol:7 emotions:[EaseEmoji allEmoji]];
     [self.faceView setEmotionManagers:@[manager]];
+    
+    //获取历史记录
+    self.showRefreshHeader = YES;
+    [self tableViewDidTriggerHeaderRefresh];
 }
 
 - (void)setupEmotion
@@ -131,6 +135,8 @@
         EaseEmotionManager *manager= [[EaseEmotionManager alloc] initWithType:EMEmotionDefault emotionRow:3 emotionCol:7 emotions:emotions tagImage:[UIImage imageNamed:emotion.emotionId]];
         [self.faceView setEmotionManagers:@[manager]];
     }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

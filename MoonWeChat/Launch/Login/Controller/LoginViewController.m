@@ -207,6 +207,7 @@
         [hud hide:YES afterDelay:0];
         //存储用户信息到文件中
         [self saveUserInfoToFile:phoneNumber andPassword:password];
+        [[EMClient sharedClient].chatManager loadAllConversationsFromDB];
     }
     else{
         hud.removeFromSuperViewOnHide = YES;

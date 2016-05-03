@@ -25,6 +25,16 @@
 		5D87E1811CC60BBE00B2EB7C /* MoonSearchFriendBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1801CC60BBE00B2EB7C /* MoonSearchFriendBar.m */; };
 		5D87E1841CC8749100B2EB7C /* SearchFriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1831CC8749100B2EB7C /* SearchFriendDetailViewController.m */; };
 		5D87E1871CD0C58200B2EB7C /* AddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1861CD0C58200B2EB7C /* AddressDetailViewController.m */; };
+		5D87E18D1CD7439F00B2EB7C /* MoonChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E18C1CD7439F00B2EB7C /* MoonChatListViewController.m */; };
+		5D87E1931CD7AA6700B2EB7C /* EMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1921CD7AA6700B2EB7C /* EMSearchBar.m */; };
+		5D87E1961CD7AA8C00B2EB7C /* EMSearchDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1951CD7AA8C00B2EB7C /* EMSearchDisplayController.m */; };
+		5D87E1991CD7AB6800B2EB7C /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1981CD7AB6800B2EB7C /* BaseTableViewCell.m */; };
+		5D87E19C1CD7ABA500B2EB7C /* UIImageView+HeadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E19B1CD7ABA500B2EB7C /* UIImageView+HeadImage.m */; };
+		5D87E19F1CD7ADF300B2EB7C /* RobotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E19E1CD7ADF300B2EB7C /* RobotManager.m */; };
+		5D87E1A21CD7AE0B00B2EB7C /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1A11CD7AE0B00B2EB7C /* UserProfileViewController.m */; };
+		5D87E1A51CD7AE8300B2EB7C /* RobotChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1A41CD7AE8300B2EB7C /* RobotChatViewController.m */; };
+		5D87E1A81CD7AF8600B2EB7C /* UserProfileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1A71CD7AF8600B2EB7C /* UserProfileManager.m */; };
+		5D87E1AB1CD7AFD000B2EB7C /* RealtimeSearchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D87E1AA1CD7AFD000B2EB7C /* RealtimeSearchUtil.m */; };
 		5D8D44181CBB595000477C5E /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D44171CBB595000477C5E /* SettingViewController.m */; };
 		5D8D441B1CBBCFE100477C5E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8D441A1CBBCFE100477C5E /* RegisterViewController.m */; };
 		5DA066FD1CB7562D002FDB1E /* AddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0531A1CB755C6002FDB1E /* AddressBookViewController.m */; };
@@ -280,6 +290,26 @@
 		5D87E1831CC8749100B2EB7C /* SearchFriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendDetailViewController.m; sourceTree = "<group>"; };
 		5D87E1851CD0C58200B2EB7C /* AddressDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressDetailViewController.h; sourceTree = "<group>"; };
 		5D87E1861CD0C58200B2EB7C /* AddressDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressDetailViewController.m; sourceTree = "<group>"; };
+		5D87E18B1CD7439F00B2EB7C /* MoonChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoonChatListViewController.h; sourceTree = "<group>"; };
+		5D87E18C1CD7439F00B2EB7C /* MoonChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoonChatListViewController.m; sourceTree = "<group>"; };
+		5D87E1911CD7AA6700B2EB7C /* EMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSearchBar.h; sourceTree = "<group>"; };
+		5D87E1921CD7AA6700B2EB7C /* EMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSearchBar.m; sourceTree = "<group>"; };
+		5D87E1941CD7AA8C00B2EB7C /* EMSearchDisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMSearchDisplayController.h; sourceTree = "<group>"; };
+		5D87E1951CD7AA8C00B2EB7C /* EMSearchDisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMSearchDisplayController.m; sourceTree = "<group>"; };
+		5D87E1971CD7AB6800B2EB7C /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		5D87E1981CD7AB6800B2EB7C /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		5D87E19A1CD7ABA500B2EB7C /* UIImageView+HeadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HeadImage.h"; sourceTree = "<group>"; };
+		5D87E19B1CD7ABA500B2EB7C /* UIImageView+HeadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HeadImage.m"; sourceTree = "<group>"; };
+		5D87E19D1CD7ADF300B2EB7C /* RobotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotManager.h; sourceTree = "<group>"; };
+		5D87E19E1CD7ADF300B2EB7C /* RobotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotManager.m; sourceTree = "<group>"; };
+		5D87E1A01CD7AE0B00B2EB7C /* UserProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileViewController.h; sourceTree = "<group>"; };
+		5D87E1A11CD7AE0B00B2EB7C /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileViewController.m; sourceTree = "<group>"; };
+		5D87E1A31CD7AE8300B2EB7C /* RobotChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotChatViewController.h; sourceTree = "<group>"; };
+		5D87E1A41CD7AE8300B2EB7C /* RobotChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RobotChatViewController.m; sourceTree = "<group>"; };
+		5D87E1A61CD7AF8600B2EB7C /* UserProfileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileManager.h; sourceTree = "<group>"; };
+		5D87E1A71CD7AF8600B2EB7C /* UserProfileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileManager.m; sourceTree = "<group>"; };
+		5D87E1A91CD7AFD000B2EB7C /* RealtimeSearchUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealtimeSearchUtil.h; sourceTree = "<group>"; };
+		5D87E1AA1CD7AFD000B2EB7C /* RealtimeSearchUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealtimeSearchUtil.m; sourceTree = "<group>"; };
 		5D8D44161CBB595000477C5E /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		5D8D44171CBB595000477C5E /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		5D8D44191CBBCFE000477C5E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -875,6 +905,8 @@
 			children = (
 				5DA053281CB755C6002FDB1E /* MoonChatViewController.h */,
 				5DA053291CB755C6002FDB1E /* MoonChatViewController.m */,
+				5D87E18B1CD7439F00B2EB7C /* MoonChatListViewController.h */,
+				5D87E18C1CD7439F00B2EB7C /* MoonChatListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1867,6 +1899,24 @@
 		5DA07BD41CB78F43002FDB1E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				5D87E1911CD7AA6700B2EB7C /* EMSearchBar.h */,
+				5D87E1921CD7AA6700B2EB7C /* EMSearchBar.m */,
+				5D87E1971CD7AB6800B2EB7C /* BaseTableViewCell.h */,
+				5D87E1981CD7AB6800B2EB7C /* BaseTableViewCell.m */,
+				5D87E1941CD7AA8C00B2EB7C /* EMSearchDisplayController.h */,
+				5D87E1951CD7AA8C00B2EB7C /* EMSearchDisplayController.m */,
+				5D87E19A1CD7ABA500B2EB7C /* UIImageView+HeadImage.h */,
+				5D87E19B1CD7ABA500B2EB7C /* UIImageView+HeadImage.m */,
+				5D87E19D1CD7ADF300B2EB7C /* RobotManager.h */,
+				5D87E19E1CD7ADF300B2EB7C /* RobotManager.m */,
+				5D87E1A91CD7AFD000B2EB7C /* RealtimeSearchUtil.h */,
+				5D87E1AA1CD7AFD000B2EB7C /* RealtimeSearchUtil.m */,
+				5D87E1A61CD7AF8600B2EB7C /* UserProfileManager.h */,
+				5D87E1A71CD7AF8600B2EB7C /* UserProfileManager.m */,
+				5D87E1A01CD7AE0B00B2EB7C /* UserProfileViewController.h */,
+				5D87E1A11CD7AE0B00B2EB7C /* UserProfileViewController.m */,
+				5D87E1A31CD7AE8300B2EB7C /* RobotChatViewController.h */,
+				5D87E1A41CD7AE8300B2EB7C /* RobotChatViewController.m */,
 				5DA07BD51CB78F43002FDB1E /* ChatList */,
 				5DA07BD81CB78F43002FDB1E /* ChatView */,
 			);
@@ -2061,6 +2111,7 @@
 				5DA07A611CB7616C002FDB1E /* MJRefreshConst.m in Sources */,
 				5DA07A8F1CB7616C002FDB1E /* EaseUserModel.m in Sources */,
 				5DA07A7E1CB7616C002FDB1E /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				5D87E1AB1CD7AFD000B2EB7C /* RealtimeSearchUtil.m in Sources */,
 				5DA07A621CB7616C002FDB1E /* UIScrollView+MJExtension.m in Sources */,
 				5DA07AA11CB7616C002FDB1E /* EaseUsersListViewController.m in Sources */,
 				5DA07A591CB7616C002FDB1E /* MJRefreshAutoStateFooter.m in Sources */,
@@ -2089,6 +2140,7 @@
 				5DA07A701CB7616C002FDB1E /* EMSDWebImageDecoder.m in Sources */,
 				5DA07A731CB7616C002FDB1E /* EMSDWebImageManager.m in Sources */,
 				5DA07A441CB7616C002FDB1E /* EMAudioPlayerUtil.m in Sources */,
+				5D87E1991CD7AB6800B2EB7C /* BaseTableViewCell.m in Sources */,
 				5D7924461CBF7A44009C8764 /* AFSecurityPolicy.m in Sources */,
 				5DA07A911CB7616C002FDB1E /* NSDateFormatter+Category.m in Sources */,
 				5DA07A4A1CB7616C002FDB1E /* EMCDDeviceManagerBase.m in Sources */,
@@ -2102,6 +2154,8 @@
 				5DA067031CB7562D002FDB1E /* MoonChatViewController.m in Sources */,
 				5DA0789F1CB75648002FDB1E /* NSString+PinYin.m in Sources */,
 				5D87E1871CD0C58200B2EB7C /* AddressDetailViewController.m in Sources */,
+				5D87E1A81CD7AF8600B2EB7C /* UserProfileManager.m in Sources */,
+				5D87E19F1CD7ADF300B2EB7C /* RobotManager.m in Sources */,
 				5DA07A501CB7616C002FDB1E /* MBProgressHUD+Add.m in Sources */,
 				5D7924491CBF7A44009C8764 /* AFURLResponseSerialization.m in Sources */,
 				5DA07A6F1CB7616C002FDB1E /* EMSDWebImageCompat.m in Sources */,
@@ -2140,12 +2194,15 @@
 				5DA07AAB1CB7616C002FDB1E /* EaseBubbleView+Location.m in Sources */,
 				5DA07AAC1CB7616C002FDB1E /* EaseBubbleView+Text.m in Sources */,
 				5D7924421CBF7A44009C8764 /* AFHTTPRequestOperation.m in Sources */,
+				5D87E1931CD7AA6700B2EB7C /* EMSearchBar.m in Sources */,
 				5D87E1751CC4C44100B2EB7C /* NewFriendViewController.m in Sources */,
 				5DA07A9A1CB7616C002FDB1E /* EaseEmotionEscape.m in Sources */,
 				5DA0688B1CB7562E002FDB1E /* Person.m in Sources */,
+				5D87E18D1CD7439F00B2EB7C /* MoonChatListViewController.m in Sources */,
 				5D87E1811CC60BBE00B2EB7C /* MoonSearchFriendBar.m in Sources */,
 				5DA07AAA1CB7616C002FDB1E /* EaseBubbleView+Image.m in Sources */,
 				5D7924441CBF7A44009C8764 /* AFHTTPSessionManager.m in Sources */,
+				5D87E1A51CD7AE8300B2EB7C /* RobotChatViewController.m in Sources */,
 				5DA07A6E1CB7616C002FDB1E /* EMSDImageCache.m in Sources */,
 				5DA07A961CB7616C002FDB1E /* EaseConvertToCommonEmoticonsHelper.m in Sources */,
 				5DA07A941CB7616C002FDB1E /* UIViewController+HUD.m in Sources */,
@@ -2156,14 +2213,17 @@
 				5DA07BDB1CB78F43002FDB1E /* ConversationListController.m in Sources */,
 				5DA07AA01CB7616C002FDB1E /* EaseRefreshTableViewController.m in Sources */,
 				5DA07A651CB7616C002FDB1E /* MWCaptionView.m in Sources */,
+				5D87E19C1CD7ABA500B2EB7C /* UIImageView+HeadImage.m in Sources */,
 				5DA07A861CB7616C002FDB1E /* PSTCollectionViewUpdateItem.m in Sources */,
 				5DA07AAD1CB7616C002FDB1E /* EaseBubbleView+Video.m in Sources */,
 				5DA07A761CB7616C002FDB1E /* NSData+EMImageContentType.m in Sources */,
+				5D87E1961CD7AA8C00B2EB7C /* EMSearchDisplayController.m in Sources */,
 				5DA07AA81CB7616C002FDB1E /* EaseBubbleView+File.m in Sources */,
 				5DA07A461CB7616C002FDB1E /* EMCDDeviceManager+Media.m in Sources */,
 				5DA07A771CB7616C002FDB1E /* UIButton+EMWebCache.m in Sources */,
 				5DA066FD1CB7562D002FDB1E /* AddressBookViewController.m in Sources */,
 				5DA067041CB7562D002FDB1E /* FoundViewController.m in Sources */,
+				5D87E1A21CD7AE0B00B2EB7C /* UserProfileViewController.m in Sources */,
 				5DA07AB61CB7616C002FDB1E /* EaseChatBarMoreView.m in Sources */,
 				5DA07AA41CB7616C002FDB1E /* EaseBaseMessageCell.m in Sources */,
 				5DA07A481CB7616C002FDB1E /* EMCDDeviceManager+ProximitySensor.m in Sources */,
@@ -2303,6 +2363,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoonWeChat/ios_IM_sdk_V3.1.1/ChatDemo-UI3.0/ChatDemo-UI3.0/3rdparty/Parse",
+					"$(PROJECT_DIR)/MoonWeChat/EaseUIAdd/EaseUI/EMUIKit/3rdparty/Parse",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MoonWeChat/PrefixHeader.pch";
@@ -2335,6 +2396,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MoonWeChat/ios_IM_sdk_V3.1.1/ChatDemo-UI3.0/ChatDemo-UI3.0/3rdparty/Parse",
+					"$(PROJECT_DIR)/MoonWeChat/EaseUIAdd/EaseUI/EMUIKit/3rdparty/Parse",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MoonWeChat/PrefixHeader.pch";

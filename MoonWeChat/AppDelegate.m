@@ -46,6 +46,13 @@
         NSLog(@"注册失败: %@", error.errorDescription);
     }
     
+    //环信ui
+    [[EaseSDKHelper shareHelper] easemobApplication:application
+                      didFinishLaunchingWithOptions:launchOptions
+                                             appkey:@"moondeveloper#moonwechat"
+                                       apnsCertName:@"hehe"
+                                        otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+    
     return YES;
 }
 

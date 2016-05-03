@@ -11,6 +11,8 @@
 #import "MoonChatViewController.h"
 #import "FoundViewController.h"
 #import "MeViewController.h"
+#import "MoonChatListViewController.h"
+#import "ConversationListController.h"
 
 @implementation TabBarViewController
 
@@ -18,7 +20,12 @@
 
     [super viewDidLoad];
     
-    MoonChatViewController *chatVC = [[MoonChatViewController alloc]init];
+//    MoonChatViewController *chatVC = [[MoonChatViewController alloc]init];
+//    MoonChatListViewController *chatVC = [[MoonChatListViewController alloc]init];
+//    EaseConversationListViewController *chatVC = [[EaseConversationListViewController alloc]init];
+    
+    ConversationListController *chatVC = [[ConversationListController alloc]init];
+    
     chatVC.title = @"微信";
     [self addChildViewController:chatVC andImage:[UIImage imageNamed:@"tabbar_mainframe~iphone"] andSelectedImage:[UIImage imageNamed:@"tabbar_mainframeHL~iphone"]];
     
