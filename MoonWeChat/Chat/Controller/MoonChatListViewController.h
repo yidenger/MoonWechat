@@ -6,8 +6,8 @@
 //  Copyright © 2016年 seth. All rights reserved.
 //
 
-#import "EaseConversationListViewController.h"
+#import "ConversationListController.h"
 
-@interface MoonChatListViewController : EaseConversationListViewController
+@interface MoonChatListViewController : ConversationListController
 
 @end

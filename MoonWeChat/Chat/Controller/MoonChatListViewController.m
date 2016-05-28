@@ -8,7 +8,7 @@
 
 #import "MoonChatListViewController.h"
 
-@interface MoonChatListViewController ()<EaseConversationListViewControllerDataSource, EaseConversationListViewControllerDelegate>
+@interface MoonChatListViewController ()
 
 @end
 
@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[EMClient sharedClient].chatManager loadAllConversationsFromDB];
+
     
 }
 
@@ -25,18 +25,5 @@
     // Dispose of any resources that can be recreated.
 }
 
--(id<IConversationModel>)conversationListViewController:(EaseConversationListViewController *)conversationListViewController modelForConversation:(EMConversation *)conversation{
-    EaseConversationModel *model = [[EaseConversationModel alloc] initWithConversation:conversation];
-
-    model.title = [conversation.ext objectForKey:@"subject"];
-    model.avatarImage = [UIImage imageNamed:@"avatar"];
-   
-    return model;
-}
-
--(void)conversationListViewController:(EaseConversationListViewController *)conversationListViewController didSelectConversationModel:(id<IConversationModel>)conversationModel{
-
-    NSLog(@"you click conversation list view controller...");
-}
 
 @end

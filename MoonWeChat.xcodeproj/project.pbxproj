@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D49B8BC1CF9805900F04AF1 /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D49B8BB1CF9805900F04AF1 /* PersonalViewController.m */; };
 		5D7204501CBFE2D800B51CC1 /* MBProgressHUD+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D72044C1CBFE2D800B51CC1 /* MBProgressHUD+MJ.m */; };
 		5D7204511CBFE2D800B51CC1 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D72044D1CBFE2D800B51CC1 /* MBProgressHUD.bundle */; };
 		5D7924421CBF7A44009C8764 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7924301CBF7A44009C8764 /* AFHTTPRequestOperation.m */; };
@@ -253,6 +254,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D49B8BA1CF9805900F04AF1 /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		5D49B8BB1CF9805900F04AF1 /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		5D72044B1CBFE2D800B51CC1 /* MBProgressHUD+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+MJ.h"; sourceTree = "<group>"; };
 		5D72044C1CBFE2D800B51CC1 /* MBProgressHUD+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+MJ.m"; sourceTree = "<group>"; };
 		5D72044D1CBFE2D800B51CC1 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1055,6 +1058,8 @@
 				5DA056D41CB755C8002FDB1E /* MeViewController.m */,
 				5D8D44161CBB595000477C5E /* SettingViewController.h */,
 				5D8D44171CBB595000477C5E /* SettingViewController.m */,
+				5D49B8BA1CF9805900F04AF1 /* PersonalViewController.h */,
+				5D49B8BB1CF9805900F04AF1 /* PersonalViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2081,6 +2086,7 @@
 			files = (
 				5DA07A851CB7616C002FDB1E /* PSTCollectionViewLayout.m in Sources */,
 				5DA07A4C1CB7616C002FDB1E /* wav.mm in Sources */,
+				5D49B8BC1CF9805900F04AF1 /* PersonalViewController.m in Sources */,
 				5DA07AB21CB7616C002FDB1E /* EaseImageView.m in Sources */,
 				5DA07A4D1CB7616C002FDB1E /* EMVoiceConverter.mm in Sources */,
 				5D87E1841CC8749100B2EB7C /* SearchFriendDetailViewController.m in Sources */,

@@ -10,6 +10,7 @@
 #import "Person.h"
 #import "PersonCell.h"
 #import "SettingViewController.h"
+#import "PersonalViewController.h"
 
 @interface MeViewController()<UITableViewDelegate, UITableViewDataSource>
 
@@ -157,11 +158,20 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.section == 0) {
+        PersonalViewController *personalVC = [[PersonalViewController alloc]init];
+        personalVC.title = @"个人信息";
+        [self.navigationController pushViewController:personalVC animated:YES];
+    }
+    else{
+        NSLog(@"table click...");
+        SettingViewController *settingVC = [[SettingViewController alloc]init];
+        settingVC.title = @"设置";
+        [self.navigationController pushViewController:settingVC animated:YES];
+    }
 
-    NSLog(@"table click...");
-    SettingViewController *settingVC = [[SettingViewController alloc]init];
-    settingVC.title = @"设置";
-    [self.navigationController pushViewController:settingVC animated:YES];
+    
 
 }
 

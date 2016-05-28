@@ -201,6 +201,12 @@
             } else {
                 ChatViewController *chatController = [[ChatViewController alloc] initWithConversationChatter:conversation.conversationId conversationType:conversation.type];
                 chatController.title = conversationModel.title;
+                //隐藏tabbar
+                chatController.hidesBottomBarWhenPushed = YES;
+                //设置返回键
+                UIBarButtonItem *backItem = [[UIBarButtonItem alloc]init];
+                [backItem setTitle:@"微信"];
+                self.navigationItem.backBarButtonItem = backItem;
                 [self.navigationController pushViewController:chatController animated:YES];
             }
         }
