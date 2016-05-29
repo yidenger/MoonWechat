@@ -11,11 +11,12 @@
 
 
 
-@interface PersonalViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PersonalViewController ()<UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property(nonatomic, strong)NSArray *dataArr;
 @property(nonatomic, weak)UITableView *tableview;
 @property(nonatomic, strong)Person *personInfo;
+@property(nonatomic, strong)NSData *imageData;
 
 @end
 
@@ -40,6 +41,7 @@
               @[@"性别", @"地区", @"个性签名"]
             ];
     _personInfo = [[Person alloc]init];
+    _imageData = nil;
 }
 
 -(void)createTableview{
@@ -80,7 +82,11 @@
         for (UIView *view in cell.contentView.subviews) {
             [view removeFromSuperview];
         }
-        imgView.image = [UIImage imageNamed: self.personInfo.avatar];
+        UIImage *personImage = [UIImage imageNamed:self.personInfo.avatar];
+        if (self.imageData) {
+            personImage = [UIImage imageWithData:self.imageData];
+        }
+        imgView.image = personImage;
         [cell.contentView addSubview:imgView];
     }
     if (indexPath.section == 0 && indexPath.row == 1) {
@@ -133,5 +139,75 @@
     return WGiveHeight(10);
     
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"you click the cell...");
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self openCamera];
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"来自手机相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self openAlbum];
+    }]];
+    
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"保存图片" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        NSLog(@"保存图片");
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        
+    }]];
+    
+    [self presentViewController:alertVC animated:YES completion:nil];
+
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    
+    //取得原图
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    NSData *imageData = UIImageJPEGRepresentation(image,0.75);
+    self.imageData = imageData;
+    
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self.tableview reloadData];
+    }];
+    
+}
+
+
+/**
+ *  打开相机
+ */
+-(void)openCamera{
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+/**
+ *  打开相册
+ */
+- (void)openAlbum{
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+}
+
+
+
+
+
+
+
 
 @end
